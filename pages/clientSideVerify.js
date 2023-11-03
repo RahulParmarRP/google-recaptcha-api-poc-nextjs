@@ -1,4 +1,4 @@
-async function clientSideVerify(captchaCode) {
+export default async function clientSideVerify(captchaCode) {
   const requestOptions = {
     method: "post"
   };

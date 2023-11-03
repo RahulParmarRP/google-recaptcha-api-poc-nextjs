@@ -1,4 +1,4 @@
-export function serverSideVerify(captchaCode) {
+export default async function serverSideVerify(captchaCode) {
   const requestOptions = {
     method: "POST",
     headers: {
