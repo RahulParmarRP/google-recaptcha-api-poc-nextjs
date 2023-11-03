@@ -28,7 +28,7 @@ function serverSideVerify(captchaCode) {
   };
 
   // fetch("http://localhost:3000/api/verify-captcha", requestOptions)
-  fetch("http://localhost:3000/api/verify-captcha", requestOptions)
+  fetch(`${window.origin}/api/verify-captcha`, requestOptions)
     .then((response) => {
       if (!response.ok) {
         throw new Error("Network response was not ok");

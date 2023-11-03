@@ -12,6 +12,7 @@ const verifyCaptcha = async (req, res) => {
   }
 
   let verified = false;
+  let responseError = null;
 
   //   const queryParams = new URLSearchParams({
   //     secret: process.env.gReCaptchaVerificationKey, // Use process.env to access environment variables
@@ -38,14 +39,16 @@ const verifyCaptcha = async (req, res) => {
     if (responseBody?.success && responseBody["error-codes"]) {
       const errorCodes = responseBody["error-codes"].toString();
       console.log("===========================errorCodes", errorCodes);
+      responseError = responseBody;
     }
     console.log("===========================verified", verified);
   } catch (err) {
     // Handle the error, if needed
     console.log("Error", err);
+    responseError = err;
   }
 
   // Return a JSON response with the verified flag
-  res.json({ verified });
+  res.json({ verified, responseError });
 };
 export default verifyCaptcha;
