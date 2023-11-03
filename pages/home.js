@@ -1,5 +1,4 @@
 import React from "react";
-
 import dynamic from "next/dynamic";
 
 export async function fetchStateCityAdvisors() {

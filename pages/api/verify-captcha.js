@@ -1,4 +1,4 @@
-export default async (req, res) => {
+const verifyCaptcha = async (req, res) => {
   if (req.method !== "POST") {
     // If the request method is not POST, return a 405 Method Not Allowed response
     return res.status(405).json({ message: "Method Not Allowed" });
@@ -48,3 +48,4 @@ export default async (req, res) => {
   // Return a JSON response with the verified flag
   res.json({ verified });
 };
+export default verifyCaptcha;
