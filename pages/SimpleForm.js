@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useState } from "react";
+// automation test keys by google
 // Site key: 6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI
 // Secret key: 6LeIxAcTAAAAAGG-vFI1TnRWxMZNFuojJ4WifJWe
 
@@ -63,8 +64,8 @@ const SimpleForm = () => {
 
   const onCaptchaChange = async (captchaCode) => {
     console.log("recaptcha token", captchaCode);
-    //    recaptchaRef.current.reset();
-    clientSideVerify(captchaCode);
+    // recaptchaRef.current.reset();
+    // clientSideVerify(captchaCode);
     serverSideVerify(captchaCode);
   };
 
@@ -72,7 +73,6 @@ const SimpleForm = () => {
     e.preventDefault();
     // You can perform some action with the form data here
     recaptchaRef.current.execute();
-    console.log("Form Data:", formData);
   };
 
   useEffect(() => {
