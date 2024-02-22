@@ -75,10 +75,6 @@ const SimpleForm = () => {
     recaptchaRef.current.execute();
   };
 
-  useEffect(() => {
-    // fetchStateCityAdvisors();
-  }, []);
-
   return (
     <div>
       <h2>Simple Form</h2>
